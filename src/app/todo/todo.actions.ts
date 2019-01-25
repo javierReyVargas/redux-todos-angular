@@ -7,6 +7,7 @@ export const TOGGLE_ALL_TODO = '[TODO] Toggle all todo';
 
 export const EDIT_TODO = '[TODO] Edit todo';
 export const BORRAR_TODO = '[TODO] Borrar todo';
+export const LIMPIAR_DO = '[TODO] Limpiar do';
 
 
 export class AgregarTodoAction implements Action {
@@ -39,6 +40,10 @@ export class ToggleAllTodo implements Action {
   constructor(public completado: boolean) {}
 }
 
+export class LimpiarDo implements Action {
+  readonly type = LIMPIAR_DO;
+}
+
 
 
 
@@ -46,4 +51,5 @@ export type Acciones = AgregarTodoAction |
                        ToggleAllTodo |
                        ToggleTodoAction  |
                        EditTodoAction |
-                       BorrarTodoAction ;
+                       BorrarTodoAction |
+                       LimpiarDo;

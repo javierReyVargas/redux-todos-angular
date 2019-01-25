@@ -3,6 +3,7 @@ import * as fromFiltro from '../../filter/filter.actions';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../app.reducers';
 import {Todo} from '../model/todo.model';
+import {LimpiarDo} from '../todo.actions';
 @Component({
   selector: 'app-todo-footer',
   templateUrl: './todo-footer.component.html',
@@ -30,5 +31,10 @@ export class TodoFooterComponent implements OnInit {
 
   contarPendientes(todos: Todo[]) {
     this.todoPendientes = todos.filter( todo => !todo.completado).length;
+  }
+
+  limpiarDo() {
+    const accion = new LimpiarDo();
+    this.store.dispatch(accion);
   }
 }
