@@ -23,8 +23,6 @@ export class TodoAddComponent implements OnInit {
     if (this.txtInput.invalid) {
       return false;
     }
-    console.log(this.txtInput.value);
-    console.log();
 
     const accion = new  fromTodoActions.AgregarTodoAction(this.txtInput.value);
     this.store.dispatch(accion);
