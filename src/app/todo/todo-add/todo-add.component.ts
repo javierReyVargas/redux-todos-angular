@@ -26,6 +26,8 @@ export class TodoAddComponent implements OnInit {
 
     const accion = new  fromTodoActions.AgregarTodoAction(this.txtInput.value);
     this.store.dispatch(accion);
+
+    this.txtInput.setValue('');
   }
 
 }
