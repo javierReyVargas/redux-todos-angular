@@ -5,8 +5,8 @@ import { NgModule } from '@angular/core';
 ngrx
 */
 import { StoreModule } from '@ngrx/store';
-import { todoReducer } from './todo/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {appReducers} from './app.reducers';
 /*
 forms
 */
@@ -34,7 +34,7 @@ import { environment } from 'src/environments/environment';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ todos: todoReducer}),
+    StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
